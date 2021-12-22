@@ -6,10 +6,3 @@
 
 
 
-## 1. Git ##
-
-- CLI
-- Vscode
-- Markdown
-- Git
-- Github
