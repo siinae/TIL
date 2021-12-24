@@ -1,4 +1,4 @@
-# 메서드 치환, 삭제 #
+# 메서드 치환, 삭제 / 정렬 #
 
 
 
@@ -186,4 +186,49 @@ df = DataFrame({'a':[2,5,3,6],'b':[71,23,25,59],'c':[493,112,190,506]})
 - Return DataFrame
 
 ---
+
+
+
+
+
+
+
+---
+
+### 06. sort() ###
+
+- Series, DataFrame 호출 가능
+
+
+
+##### (1) sort_index()
+
+```python
+import pandas as pd
+import numpy as np
+from pandas import Series, DataFrame
+
+a = pd.read_csv('a.csv')
+a.sort_index(ascending = True)  #오름차순 정렬
+a.sort_index(ascending = False) #내림차순 정렬
+a.sort_index(axis = 0)          #행 기준으로 열끼리 정렬
+a.sort_index(axis = 1)			#열 기준으로 행끼리 정렬
+
+```
+
+
+
+##### (2) sort_value()
+
+- Series, DataFrame 특정 컬럼 순서에 맞게 본문의 값(value)으로 정렬
+
+```python
+a.sort_values(by = 'name')  
+#name 기준으로 오름차순(default)정렬
+
+a.sort_values(by = ['name','salary'],ascending = [True, False]) 
+#name(오름차순)에 따른 salary(내림차순) 정렬  
+```
+
+
 
